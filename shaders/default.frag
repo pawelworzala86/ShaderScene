@@ -34,11 +34,12 @@ void main(void) {
 	vec2 coord =vec2(vCoord.x,1.0-vCoord.y);
     vec4 diffuse = texture(diffuseTexture, coord);
 
-	float random = rand(vec2(coord.x/10.0));
+        float time = round(iTime*4.0);
+	float random = rand(time*vec2(coord.x/100.0,0));
 
-	if(random<0.1){
-		outColor = vec4(vec3(0.5), 1.0);
+	if((random<0.6)&&(random>0.0)){
+	     outColor = vec4(diffuse.rgb+vec3(0.5), 1.0);
 	}else{
-    	outColor = vec4(diffuse.rgb, 1.0);
+    	     outColor = vec4(diffuse.rgb, 1.0);
 	}
 }

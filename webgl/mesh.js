@@ -1,7 +1,7 @@
 function CreateMesh(gl,meshshader,geometry){
 
 
-   const texture = loadTexture(gl, "/textures/brick.png");
+   const texture = loadTexture(gl, "/textures/worzala.png");
 
      function CreateBuffer(type,data){
       const buffer = gl.createBuffer()

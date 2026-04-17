@@ -1,0 +1,23 @@
+{
+  "name": "shaderscene",
+  "version": "1.0.0",
+  "description": "Shader tool for test shaders - fragment shader editor\r for shadertoy.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawelworzala86/ShaderScene.git"
+  },
+  "keywords": [],
+  "author": "Paweł Worzała",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/pawelworzala86/ShaderScene/issues"
+  },
+  "homepage": "https://github.com/pawelworzala86/ShaderScene#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

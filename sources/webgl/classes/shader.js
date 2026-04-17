@@ -1,4 +1,4 @@
-async function CreateShader(gl,frag){
+export async function CreateShader(gl,frag){
 
     var vertCode = await get('/shaders/default.vert')
          var fragCode = frag?frag:(await get('/shaders/default.frag'))

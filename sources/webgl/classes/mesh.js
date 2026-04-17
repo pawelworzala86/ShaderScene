@@ -1,4 +1,6 @@
-function CreateMesh(gl,meshshader,geometry){
+import { loadTexture } from "./texture.js"
+
+export function CreateMesh(gl,meshshader,geometry){
 
 
    const texture = loadTexture(gl, "/textures/worzala.png");
@@ -31,7 +33,7 @@ function CreateMesh(gl,meshshader,geometry){
             }
 
     return {buffer,type:gl.TRIANGLES,
-           render(shader,proj_matrix,view_matrix,mo_matrix){
+           render(uniform,shader,proj_matrix,view_matrix,mo_matrix){
 
 
 
@@ -64,24 +66,24 @@ function CreateMesh(gl,meshshader,geometry){
 
         //iTime
         var uniformLocation = gl.getUniformLocation(shader.program, "iTime");
-       gl.uniform1f(uniformLocation, iTime);
+       gl.uniform1f(uniformLocation, uniform.iTime);
 
        //iTimeDelta
        var uniformLocation = gl.getUniformLocation(shader.program, "iTimeDelta");
-       gl.uniform1f(uniformLocation, iTimeDelta);
+       gl.uniform1f(uniformLocation, uniform.iTimeDelta);
 
 
        //iFrameRate
        var uniformLocation = gl.getUniformLocation(shader.program, "iFrameRate");
-       gl.uniform1f(uniformLocation, iFrameRate);
+       gl.uniform1f(uniformLocation, uniform.iFrameRate);
 
        //iFrame
        var uniformLocation = gl.getUniformLocation(shader.program, "iFrame");
-       gl.uniform1i(uniformLocation, iFrame);
+       gl.uniform1i(uniformLocation, uniform.iFrame);
 
        //iMouse
        var uniformLocation = gl.getUniformLocation(shader.program, "iMouse");
-       gl.uniform4fv(uniformLocation, iMouse);
+       gl.uniform4fv(uniformLocation, uniform.iMouse);
                
                if(geometry.indices){
                    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffer.index);

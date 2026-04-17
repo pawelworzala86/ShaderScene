@@ -1,4 +1,9 @@
-async function CreateModel(gl,shader){
+import { GetCube, GetPanel } from "./geometry.js"
+import { CreateMesh } from "./mesh.js"
+
+const { mat4, vec3 } = glMatrix
+
+export async function CreateModel(gl,shader){
 
         var geometry = GetPanel()//GetCube()
 
@@ -16,11 +21,11 @@ async function CreateModel(gl,shader){
     return {
         mo_matrix,
 
-        render(proj_matrix,view_matrix){
+        render(uniform,proj_matrix,view_matrix){
 
             for(let mesh of meshes){
                 
-                mesh.render(shader,proj_matrix,view_matrix,this.mo_matrix)
+                mesh.render(uniform,shader,proj_matrix,view_matrix,this.mo_matrix)
                 
             }
             

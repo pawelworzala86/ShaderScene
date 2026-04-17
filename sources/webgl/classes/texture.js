@@ -1,8 +1,4 @@
-//
-// Initialize a texture and load an image.
-// When the image finished loading copy it into the texture.
-//
-function loadTexture(gl, url) {
+export function loadTexture(gl, url) {
     const texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
   

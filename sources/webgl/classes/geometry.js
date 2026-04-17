@@ -1,4 +1,4 @@
-function GetCube(){
+export function GetCube(){
     return {
         vertices: [
             -1,-1,-1, 1,-1,-1, 1, 1,-1, -1, 1,-1,
@@ -24,7 +24,7 @@ function GetCube(){
     }
 }
 
-function GetPanel(){
+export function GetPanel(){
     return {
         vertices: [
             -1.0,1.0,0.0,
